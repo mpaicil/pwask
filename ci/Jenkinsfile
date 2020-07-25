@@ -5,7 +5,7 @@ pipeline {
       steps {
 
           sh 'python --version'
-          sh 'sudo pip install virtualenv'
+          sh 'pip install virtualenv'
           sh 'pip install -U pytest'
         
       }
