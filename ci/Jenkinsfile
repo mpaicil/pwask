@@ -5,7 +5,7 @@ pipeline {
       }
   }
   stages {
-    stage('test') {
+    stage('build') {
       steps {
         sh 'python3 -m venv env'
         sh '. env/bin/activate'
