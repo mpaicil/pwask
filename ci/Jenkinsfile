@@ -1,6 +1,17 @@
 pipeline {
-  agent any
+  agent {
+      docker{
+          image 'frolvlad/alpine-python3'
+      }
+  }
   stages {
+    stage('test') {
+      steps {
+        sh 'python3 -m venv env'
+        sh '. env/bin/activate'
+        sh 'pip3 install pytest'
+      }   
+    }
     stage('test') {
       steps {
         sh 'ls'
