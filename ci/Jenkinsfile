@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        withPythonEnv('python3') {
+        withPythonEnv('python') {
           sh 'python --version'
           sh 'virtualenv venv --distribute'
           sh '. venv/bin/activate'
