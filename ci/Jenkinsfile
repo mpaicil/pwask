@@ -1,18 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
-      steps {
-
-          sh 'python --version'
-          sh 'pip install virtualenv'
-          sh 'pip install -U pytest'
-        
-      }
-    }
     stage('test') {
       steps {
-        sh 'pytest'
+        sh './env/bin/pytest'
       }   
     }
   }
