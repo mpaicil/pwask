@@ -3,11 +3,11 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        withPythonEnv('python') {
+
           sh 'python --version'
           sh 'sudo pip install virtualenv'
           sh 'pip install -U pytest'
-        }
+        
       }
     }
     stage('test') {
