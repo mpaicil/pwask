@@ -3,11 +3,14 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'virtualenv venv --distribute'
-        sh '. venv/bin/activate'
-        sh 'pip install -U pytest'
-        sh 'python3 -m venv env'
-        sh '. env/bin/activate'
+        withPythonEnv('python3') {
+          sh 'python --version'
+          sh 'virtualenv venv --distribute'
+          sh '. venv/bin/activate'
+          sh 'pip install -U pytest'
+          sh 'python3 -m venv env'
+          sh '. env/bin/activate'
+        }
       }
     }
     stage('test') {
