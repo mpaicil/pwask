@@ -1,6 +1,8 @@
 pipeline {
   agent {
-      docker 'jfloff/alpine-python:3.8'
+      node {
+          label 'python-agent'
+      }
   }
   stages {
     stage('build') {
