@@ -1,7 +1,7 @@
 pipeline {
   agent {
-      node {
-        label 'python-agent' 
+      docker  {
+        image 'jfloff/alpine-python' 
       }
   }
   stages {
@@ -21,7 +21,7 @@ pipeline {
   }
 }
 
-/*
+/*jfloff/alpine-python
 node {
           label 'docker-agent'
       }*/
